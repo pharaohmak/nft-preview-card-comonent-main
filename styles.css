@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors */
+    --color-primary: hsl(215, 51%, 70%);
+    --color-secondary: hsl(178, 100%, 50%);
+    --color-secondary-hover: hsla(178, 100%, 50%, 0.5);
+    --color-bg-main: hsl(217, 54%, 11%);
+    --color-bg-card: hsl(216, 50%, 16%);
+    --color-line: hsl(215, 32%, 27%);
+    --color-text: hsl(215, 51%, 70%);
+    --color-white: hsl(0, 0%, 100%);
+
+    /* Typography  */
+    --font-family: 'Outfit', sans-serif;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-bold: 600;
+
+    /* Convert px to rem for better accessibility */
+    --font-size-base: 1.125rem;    /* 18px */
+    --font-size-small: 0.875rem;   /* 14px */
+    --font-size-large: 1.5rem;     /* 24px */
+}
+
+hr {
+    width: 100%;
+    margin: 1.5rem 0;
+}
+
+strong {
+    font-weight: var(--font-weight-normal);
+    color: var(--color-text);
+}
+
+span {
+    font-weight: var(--font-weight-normal);
+    color: var(--color-line);
+}
+
+/* Base styles */
+body {
+    font-size: var(--font-size-base);
+    font-family: var(--font-family);
+    background-color: var(--color-bg-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+.container {
+    width: 90%;
+    max-width: 375px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+}
+
+.card {
+    background-color: var(--color-bg-card);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.5);
+}
+
+/* Image container with hover effect */
+.card-image-container {
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card-image {
+    width: 100%;
+    display: block;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.card-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-secondary-hover);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-image-container:hover .card-image-overlay {
+    opacity: 1;
+}
+
+.card-title {
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    margin: 1.5rem 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.card-title:hover {
+    color: var(--color-secondary);
+    cursor: pointer;
+}
+
+.card-description {
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.card-info {
+    margin-top: 1.5rem;
+}
+
+.card-info__item--container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.card-info__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.price {
+    color: var(--color-secondary);
+    font-weight: var(--font-weight-bold);
+}
+
+.time-left {
+    color: var(--color-text);
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--color-line);
+    margin: 1rem 0;
+}
+
+.creator {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--color-text);
+    font-size: var(--font-size-small);
+}
+
+.creator-img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid var(--color-white);
+}
+
+.creator strong {
+    color: var(--color-white);
+    transition: color 0.3s ease;
+}
+
+.creator strong:hover {
+    color: var(--color-secondary);
+    cursor: pointer;
+}
